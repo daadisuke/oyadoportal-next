@@ -1,0 +1,139 @@
+@use '../global' as *;
+
+.l-section {
+  padding: 3em 0;
+
+  @include min-screen("md") {
+    padding: 5em 0;
+  }
+
+  .l-section__inner {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    &.-content-full {
+      max-width: inherit;
+    }
+  }
+
+  &.company-main {
+    padding: 0 1em 1em;
+
+    .l-section__inner {
+      max-width: 1150px;
+      padding: 3.5em 0;
+    }
+  }
+
+  &.privacypolicy-main {
+    padding: 0 1em 1em;
+
+    .l-section__inner {
+      max-width: 1050px;
+      padding: 3.5em 0;
+    }
+  }
+
+  &.detail {
+    padding: 1em;
+
+    .l-section__inner {
+      max-width: 880px;
+      padding: 0;
+    }
+  }
+
+  &.seminar {
+    background: $color-gray-100;
+  }
+
+  &.result {
+    background: $color-main;
+
+    .l-section__inner {
+      max-width: 1300px;
+    }
+  }
+
+  &.detail {
+    .l-section__inner {
+      max-width: 880px;
+      margin-bottom: 3em;
+    }
+  }
+
+  &.p-seminar__title {
+
+    .l-section__inner {
+      max-width: 900px;
+    }
+  }
+
+  &.seminar-list {
+    padding: 0 1em 1em;
+    // background: $color-gray-100;
+
+    @include min-screen("md") {
+      padding: 0 1em 1em;
+    }
+
+    .l-section__inner {
+      max-width: 1050px;
+
+      @include min-screen("md") {
+        padding: 1em 0 3em;
+      }
+    }
+  }
+
+  &.contact-main {
+    padding: 2em 1em 1em;
+
+    @include min-screen("md") {
+      padding: 0 1em 1em;
+    }
+
+    .l-section__inner {
+      padding: 0 0 2em;
+      max-width: 1050px;
+
+      @include min-screen("md") {
+        padding: 3em 0;
+      }
+    }
+  }
+
+  &.column-list {
+    padding: 2em 0 1em;
+    @include min-screen("md") {
+      padding: 3em 1em 1em;
+    }
+    .l-section__inner {
+      max-width: 1050px;
+    }
+  }
+
+  &.case {
+    background: $color-main;
+
+    .l-section__inner {
+      max-width: 1050px;
+    }
+  }
+
+  &.case-list {
+    padding: 0 0 1em;
+
+    .l-section__inner {
+      padding: 0 0 3em;
+      max-width: 1050px;
+    }
+
+    @include min-screen("md") {
+      padding: 1em;
+    }
+  }
+
+}

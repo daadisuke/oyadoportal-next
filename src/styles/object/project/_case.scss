@@ -1,0 +1,112 @@
+@use 'global' as *;
+
+.p-case {
+  &__list {
+    &-li {
+
+      +li {
+        margin-top: 2em;
+      }
+
+      &-name {
+        color: #FFF;
+        @include font-size(13);
+        font-weight: 600;
+        margin-bottom: 5px;
+        padding: 0.4em 0.5em 0.5em;
+        background: #000;
+        display: inline-block;
+
+        @include min-screen("md") {
+          font-size: min(1.8vw, 20px);
+        }
+
+        @include min-screen(1150px) {
+          @include font-size(20);
+        }
+      }
+
+      &-wrap {
+        display: block;
+        background: #FFF;
+
+        @include min-screen("md") {
+          display: flex;
+        }
+      }
+
+      &-ph {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        overflow: hidden;
+        background: $color-gray-100;
+
+        @include min-screen("md") {
+          width: 40%;
+          height: auto;
+        }
+
+        img {
+          width: 130%;
+          max-width: none;
+          object-fit: cover;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(1);
+          transition: all 0.7s;
+        }
+      }
+
+      dl {
+        line-height: 1.4;
+        padding: 1.2em 1.5em;
+        flex: 1;
+
+        dt {
+          font-weight: 700;
+          @include font-size(18);
+
+          @include min-screen("md") {
+            font-size: min(2vw, 22px);
+          }
+
+          @include min-screen(1150px) {
+            @include font-size(22);
+          }
+
+          margin-bottom: 0.5em;
+        }
+      }
+
+      a:hover {
+        .p-case__list-li-ph {
+          img {
+            transform: translate(-50%, -50%) scale(1.15);
+          }
+        }
+      }
+    }
+
+    &.no-link {
+      >li {
+        position: relative;
+
+        &:after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        >a {
+          cursor: default;
+        }
+      }
+    }
+  }
+}

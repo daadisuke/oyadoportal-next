@@ -1,0 +1,16 @@
+// REST Clientというvscodeの拡張機能を入れるとレスポンスの確認ができる
+// https://qiita.com/toshi0607/items/c4440d3fbfa72eac840c
+// 確認したいブロック（###で区切っている）でCmd + Alt + R
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+Accept:application/json
+
+{
+  "email": "hoge@admin.com",
+  "password": "admin"
+}
+
+###
+POST http://localhost:3000/api/auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhvZ2VAYWRtaW4uY29tIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTY1MTY2NTIyOH0.MEdCj0OQfyh0XILVI3otxWysJzrLdfimUto23lNqmuk

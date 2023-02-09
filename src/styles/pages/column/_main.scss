@@ -1,0 +1,264 @@
+@use 'global' as *;
+
+.column-main {
+  padding: 1em;
+}
+
+.column-main__contentWrap {
+  margin-bottom: 2em;
+
+  @include min-screen("md") {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto 2em;
+  }
+}
+
+.column-main__title {
+  @include font-size(20);
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.6;
+
+  @include min-screen("md") {
+    @include font-size(45);
+  }
+}
+
+.column-main__txtWrap {
+  margin-top: 2rem;
+}
+
+.column-main__txt {
+  @include font-size(14);
+  color: #323232;
+  font-weight: 500;
+  line-height: 1.4;
+
+  @include min-screen("md") {
+    @include font-size(18);
+  }
+}
+
+.column-main__yellowUnderline {
+  background: linear-gradient(transparent 75%, #fedc0b 75%);
+}
+
+.column-main__tocWrap {
+  margin-top: 2rem;
+
+  @include min-screen("md") {
+    margin-top: 3rem;
+  }
+}
+
+.column-main__toc {
+  padding: 1rem;
+  background: #f7f7f7;
+
+  @include min-screen("md") {
+    padding: 2rem;
+  }
+}
+
+.column-main__tocTitle {
+  @include font-size(20);
+  color: #323232;
+  font-weight: 700;
+  line-height: 1.4;
+
+  @include min-screen("md") {
+    @include font-size(36);
+  }
+}
+
+.column-main__tocContents {
+  margin-top: 0.5rem;
+
+  >.column-main__tocContent {
+
+    &:not(:first-of-type) {
+      margin-top: 0.8rem;
+    }
+
+    >.column-main__tocLink {
+      font-weight: 600;
+    }
+  }
+
+  .column-main__tocContent {
+    list-style-type: none;
+  }
+
+  @include min-screen("md") {
+    margin-top: 1rem;
+  }
+}
+
+
+
+.column-main__tocLink {
+  @include font-size(13);
+  color: #1a73e8;
+  line-height: 1.4;
+
+  @include min-screen("md") {
+    @include font-size(15);
+  }
+}
+
+.column-main__tocContents--secondary {
+  margin: 0 0 0 1em !important;
+
+  .column-main__tocLink {
+    @include font-size(12);
+
+    @include min-screen("md") {
+      @include font-size(13);
+    }
+  }
+}
+
+// .column-main__tocContent {
+//   &:not(:first-of-type) {
+//     margin-top: 0.2rem;
+//   }
+// }
+
+.column-main__tocNum {
+  margin-right: 0.5rem;
+}
+
+.column-main__descTitleWrap {
+  margin-top: 3rem;
+}
+
+.column-main__descTitleWrap--secondary {
+  margin-top: 2rem;
+}
+
+.column-main__descTitleWrap--tertiary {
+  margin-top: 1.5rem;
+}
+
+.column-main__descTitle {
+  width: 100%;
+  max-width: 880px;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  @include font-size(17);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.4;
+  background: #323c69;
+
+  @include min-screen("md") {
+    @include font-size(33);
+  }
+}
+
+.column-main__descTitle--secondary {
+  @include font-size(15);
+  color: #323232;
+  font-weight: 700;
+  line-height: 1.5;
+  border-bottom: 1px solid #b6b6b6;
+
+  @include min-screen("md") {
+    @include font-size(24);
+  }
+}
+
+.column-main__descTitle--tertiary {
+  @include font-size(14);
+  color: #323232;
+  font-weight: 700;
+  line-height: 1.5;
+
+  @include min-screen("md") {
+    @include font-size(20);
+  }
+}
+
+.column-main__descTxtWrap {
+  margin-top: 2rem;
+}
+
+.column-main__descTxt,
+.column-main__descTxtWrap li {
+  list-style: disc;
+  @include font-size(14);
+  color: #323232;
+  font-weight: 500;
+  line-height: 1.6;
+
+  @include min-screen("md") {
+    @include font-size(18);
+  }
+}
+
+.column-main__descTxtWrap ul {
+  margin-left: 2rem;
+}
+
+.column-main__blueText {
+  color: #175ae2;
+}
+
+.column-main__redText {
+  color: #f10007;
+}
+
+.column-main__imgWrap {
+  width: fit-content;
+  margin: 2rem auto 0;
+}
+
+.column-main__tableWrap {
+  margin-top: 1rem;
+}
+
+.column-main__table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #d7d7d7;
+
+  @include min-screen("md") {
+    max-width: 696px;
+    margin: 0 auto;
+  }
+
+  & th,
+  td {
+    padding: 0.25rem;
+    text-align: center;
+    @include font-size(12);
+    color: #323232;
+    font-weight: 500;
+    line-height: 1.4;
+    border-collapse: collapse;
+    border: 1px solid #d7d7d7;
+
+    @include min-screen("md") {
+      width: 50%;
+      @include font-size(14);
+    }
+  }
+
+  & th {
+    background: #d8d8d8;
+  }
+
+  & td {
+    padding: 0.5rem;
+  }
+}
+
+.column-main__pankuzuWrap {
+  margin-top: 4rem;
+
+  @include min-screen("md") {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 48vw);
+  }
+}

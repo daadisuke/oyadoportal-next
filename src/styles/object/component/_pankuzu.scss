@@ -1,0 +1,49 @@
+@use 'global' as *;
+
+.c-pankuzu {
+  margin: 1em 1em 0;
+  @include min-screen("md") {
+    margin: 3em 1em 0;
+  }
+}
+
+.c-pankuzu__items {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.c-pankuzu__item {
+  margin: 0;
+  white-space: nowrap;
+
+  &:not(:first-of-type) {
+    position: relative;
+    margin-left: 1.5rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -1rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-top: 2px solid #e4502b;
+      border-right: 2px solid #e4502b;
+      transform: rotate(45deg) translateX(-50%);
+    }
+  }
+
+  & a {
+    // @include font-size(5);
+    color: #323232;
+    font-weight: 500;
+    line-height: 1.4;
+
+    @include min-screen("md") {
+      @include font-size(16);
+    }
+  }
+}

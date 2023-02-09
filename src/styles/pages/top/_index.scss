@@ -1,0 +1,319 @@
+@use 'hero';
+
+@use 'global' as *;
+
+.top-heading {
+
+  &__main {
+
+    &-center {
+      color: $color-main;
+      // @include font-size(45);
+      @include font-size(21);
+      font-weight: 700;
+      line-height: 1.7;
+      margin-bottom: 1.5em;
+      text-align: center;
+      letter-spacing: 0.1em;
+      position: relative;
+
+      @include min-screen("md") {
+        font-size: min(3vw, 45px);
+      }
+
+      span {
+        color: $color-main-accent;
+        @include font-size(12);
+        line-height: 1.2;
+        vertical-align: top;
+        margin: 0.6em 0 0 0.8em;
+        padding: 0.2em 0.5em 0.3em;
+        display: inline-block;
+        border: 1px solid $color-main-accent;
+
+        @include min-screen("md") {
+          font-size: min(2.5vw, 29px);
+          margin: 0 0 0 0.8em;
+          padding: 0.2em 0.5em 0.3em;
+          vertical-align: middle;
+        }
+      }
+
+      &:after {
+        content: "";
+        width: 2em;
+        height: 1px;
+        margin: 0.5em auto 0;
+        display: block;
+        background: $color-main;
+      }
+
+      &.white {
+        color: #FFF;
+
+        &:after {
+          background: #FFF;
+        }
+      }
+
+    }
+
+    &-column {
+      color: $color-text;
+      @include font-size(45);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+  }
+
+  &__secondary {
+    &-detail {
+      color: #FFF;
+      @include font-size(33);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1em;
+      padding: 0.5em 0.5em 0.6em;
+      background: $color-main;
+    }
+  }
+
+  &__tertiary {
+    &-detail {
+      color: $color-text;
+      @include font-size(24);
+      font-weight: 700;
+      margin-bottom: 1em;
+      padding: 0.5em 0;
+      border-bottom: 1px solid #B6B6B6;
+    }
+  }
+
+  &__quaternary {
+    &-detail {
+      color: $color-text;
+      @include font-size(20);
+      font-weight: 700;
+      margin-bottom: 1em;
+      padding: 0.5em 0;
+    }
+  }
+}
+
+.p-top {
+  margin: 3em 0 0;
+}
+
+.seminar .swiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-scrollbar {
+  display: block;
+  @include min-screen("md") {
+    display: none;
+  }
+}
+
+.problem__detail {
+
+  &:nth-child(even) {
+
+    .problem__detail-ph {
+      order: 2;
+    }
+
+    .problem__detail-contents {
+      order: 1;
+    }
+  }
+
+  &+.problem__detail {
+    margin-top: 2em;
+
+    @include min-screen("md") {
+      margin-top: 5em;
+    }
+  }
+
+  // min-height: 330px;
+  display: block;
+  justify-content: space-between;
+
+  @include min-screen("md") {
+    min-height: 250px;
+    display: flex;
+  }
+
+  @include min-screen(1500px) {
+    min-height: 470px;
+  }
+
+  &-ph {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+
+    @include min-screen("md") {
+      width: 32%;
+      height: auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+  }
+
+  &-contents {
+    width: 100%;
+    text-align: center;
+    display: grid;
+    justify-items: inherit;
+    align-items: start;
+
+    @include min-screen("md") {
+      width: 63%;
+      justify-items: center;
+    }
+
+    &-question {
+      color: #FFF;
+      font-weight: 700;
+      margin-bottom: 1.6em;
+      padding: 0.5em 0.7em 0.6em;
+      background: $color-main;
+      text-align: center;
+      display: inline-block;
+      position: relative;
+      @include font-size(15);
+      letter-spacing: 0.1em;
+
+      @include min-screen("md") {
+        font-size: min(2vw, 30px);
+        margin-bottom: 1.2em;
+        padding: .6em 1em .7em;
+        letter-spacing: inherit;
+      }
+
+      @include min-screen(1500px) {
+        @include font-size(30);
+      }
+
+      &:after {
+        content: "";
+        width: 30px;
+        height: 24px;
+        display: block;
+        background: url(/top/problem__question__arrow.svg) no-repeat center top/contain;
+        position: absolute;
+        left: 50%;
+        bottom: -20px;
+        transform: translateX(-50%);
+        z-index: -1;
+
+        @include min-screen("md") {
+          width: 50px;
+          height: 50px;
+          bottom: -30px;
+        }
+      }
+
+    }
+
+    &-item {
+      width: 100%;
+      margin-top: 1em;
+
+      @include min-screen("md") {
+        margin-top: 1em;
+      }
+
+      dt {
+        font-weight: bold;
+        margin-bottom: 0;
+        padding: 0.6em 0.4em 0.7em;
+        background: #E8E8E8;
+        @include font-size(14);
+
+        @include min-screen("md") {
+          font-size: min(1.6vw, 28px);
+          margin-bottom: 0.3em;
+        }
+
+        @include min-screen(1500px) {
+          @include font-size(28);
+        }
+      }
+
+      dd {
+        ul {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          @include min-screen("md") {
+            flex-wrap: nowrap;
+          }
+
+          li {
+            width: 50%;
+            max-height: 140px;
+            color: $color-main;
+            font-weight: 700;
+            line-height: 1.2;
+            padding: 0.6em 1em;
+            border: 1px solid #E8E8E8;
+            border-top: none;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex-wrap: wrap;
+            @include font-size(13);
+
+            @include min-screen("md") {
+              //font-size: min(1.4vw, 20px);
+            }
+
+            &:first-child {
+              border-left: 1px solid #E8E8E8;
+            }
+
+            &:nth-child(odd) {
+              @include max-screen("md") {
+                border-right: none;
+              }
+            }
+
+            span {
+              width: 100%;
+              height: 3em;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            @include min-screen("md") {
+              border-right: 1px solid #E8E8E8;
+              border-left: none;
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

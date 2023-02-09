@@ -1,0 +1,318 @@
+@use 'global' as *;
+
+.contact-main__flow {
+
+  border-top: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    color: #E8E8E8;
+    font-weight: 700;
+    margin: 1.5em;
+
+    @include min-screen("md") {
+      margin: 2em;
+    }
+
+    &.active {
+      color: $color-main-accent;
+    }
+  }
+
+}
+
+.contact-main__form {
+  margin-top: 1.5em;
+  padding: 0 5% 1.2em;
+  border: 1px solid #DEDEDE;
+
+  @include min-screen("md") {
+    margin-top: 3em;
+    padding: 2.5em 4em 4em;
+  }
+
+  /* form-base */
+  button,
+  fieldset,
+  form,
+  input,
+  label,
+  legend,
+  select,
+  textarea {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    // vertical-align: middle;
+  }
+
+  fieldset {
+    border: none;
+    display: block;
+  }
+
+  fieldset span {
+    display: inline-block;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 7em;
+    @include font-size(12);
+    padding: 0.5em 0.8em;
+    border: 1px solid #D1D1D1;
+    outline: none;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    background: $color-lorange;
+
+    @include min-screen("md") {
+      @include font-size(16);
+    }
+
+    &::placeholder {
+      color: #949494;
+    }
+    &+label {
+      color: $color-red;
+      margin-top: 0.3em;
+      @include font-size(13);
+      @include min-screen("md") {
+        @include font-size(15);
+      }
+    }
+  }
+
+  button {
+    @include font-size(16);
+    padding: 0.5em 0.8em;
+    border-radius: 1em;
+    cursor: pointer;
+    border: 1px solid #707070;
+    vertical-align: middle;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    // width: 1.2em;
+    // height: 1.2em;
+    margin-right: .3em;
+    accent-color: $color-lorange;
+  }
+
+  input[type="checkbox"]+label,
+  input[type="radio"]+label {
+    display: inline-block;
+    margin-right: 0.6em;
+    vertical-align: middle;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="password"] {
+    @include font-size(12);
+    width: 100%;
+    vertical-align: middle;
+    border: none;
+    padding: 0.7em 1em;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    outline: none;
+    border: 1px solid #E8E8E8;
+    background: $color-lorange;
+
+    @include min-screen("md") {
+      @include font-size(16);
+    }
+
+    &::placeholder {
+      color: #949494;
+    }
+    &+label {
+      color: $color-red;
+      margin-top: 0.3em;
+      @include font-size(13);
+      @include min-screen("md") {
+        @include font-size(15);
+      }
+    }
+  }
+
+  select {
+    @include font-size(12);
+    width: 100%;
+    padding: 0.7em 1em;
+    border: none;
+    border: 1px solid #E8E8E8;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    background: $color-lorange;
+
+    @include min-screen("md") {
+      @include font-size(16);
+    }
+    &+label {
+      color: $color-red;
+      margin-top: 0.3em;
+      @include font-size(13);
+      @include min-screen("md") {
+        @include font-size(15);
+      }
+    }
+  }
+
+  select option[selected],
+  select option[active] {
+    color: #FFF;
+    background: #FFF3EC;
+  }
+
+  input[type="file"] {
+    padding: 5px 0;
+  }
+
+  .label-name {
+    margin: 0px 7px 0 0;
+    display: inline-block;
+  }
+
+  input.text-ss,
+  select.text-ss {
+    width: 100%;
+
+    @include min-screen("md") {
+      width: auto;
+    }
+  }
+
+  input.text-sss,
+  select.text-sss {
+    width: 10%;
+  }
+
+  input.text-s,
+  select.text-s {
+    width: 60%;
+  }
+
+  dt {
+    font-weight: bold;
+    margin: 2.5em 0 1.0em;
+    display: flex;
+    align-items: center;
+
+    span {
+      @include font-size(11);
+      color: #FFF;
+      margin-left: 1em;
+      padding: 0.1em 0.3em 0.2em;
+      background: $color-red;
+
+      @include min-screen("md") {
+        @include font-size(14);
+      }
+    }
+  }
+
+  dd {
+    margin-left: 0.1em;
+    display: flex;
+    flex-wrap: wrap;
+
+    span {
+      width: 100%;
+      margin: 0 0 1em;
+      display: flex;
+      align-items: center;
+
+      @include min-screen("md") {
+        width: 40%;
+      }
+      &+label {
+        color: $color-red;
+        width: 100%;
+        margin-top: 0.3em;
+        @include font-size(13);
+        @include min-screen("md") {
+          @include font-size(15);
+        }
+      }
+    }
+  }
+}
+
+.contact-main__form-text {
+  color: $color-main-accent;
+  font-weight: 700;
+  @include font-size(17);
+  line-height: 1.4;
+  margin: 2em 0 1em;
+  text-align: center;
+
+  @include min-screen("md") {
+    @include font-size(33);
+  }
+
+  &+p {
+    line-height: 1.9;
+    text-align: left;
+    @include min-screen("md") {
+      text-align: center;
+    }
+  }
+}
+
+.contact-main__check {
+  @include font-size(13);
+  line-height: 1.8;
+  margin: 1em 0 2em;
+  text-align: center;
+
+  @include min-screen("md") {
+    @include font-size(16);
+    margin-top: 3em;
+  }
+
+  &box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      margin-right: 0.3em;
+    }
+    &+label {
+      color: $color-red;
+      margin-top: 0.3em;
+      @include font-size(13);
+      @include min-screen("md") {
+        @include font-size(15);
+      }
+    }
+  }
+
+  a {
+    color: $color-active;
+    text-decoration: underline;
+  }
+
+  .c-btn__more {
+    margin-top: 2em;
+
+    a {
+      color: #FFF;
+    }
+  }
+}
+
+.contact-main__checkbox {
+  margin-top: 1em;
+}

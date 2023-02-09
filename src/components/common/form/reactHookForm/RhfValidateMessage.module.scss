@@ -1,0 +1,12 @@
+@use 'global' as *;
+
+//バリデーションメッセージ
+.form-RhfvalidateMessage {
+  font-weight: bold;
+  color: #f50934;
+  line-height: 1.6;
+  @include font-size(14px);
+  * + & {
+    margin-top: 8px;
+  }
+}

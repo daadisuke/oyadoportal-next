@@ -1,0 +1,45 @@
+@use 'global' as *;
+
+.privacypolicy-main {
+
+  ol {
+    margin: 0 0 2em;
+    line-height: 1.4;
+
+    &.c-list__number {
+      margin: 0.5em 0 1em 0.5em;
+    }
+
+    &.c-list__number-circle {
+      margin: 0.5em 0 1em 0;
+    }
+
+  }
+
+  p {
+    margin: 0 0 1.5em 0.5em;
+    line-height: 1.4;
+    text-indent: 1em;
+
+    +.c-list__number-circle {
+      margin: 0 0 1em 1.5em;
+    }
+  }
+
+  .company-info {
+    margin: 0 0 3em 1.5em;
+    padding: 1em 1.5em;
+    border: 1px solid rgb(221, 221, 221);
+    display: inline-block;
+
+    p {
+      margin: 0;
+      text-indent: 0;
+
+      &+p {
+        margin-top: 0.3em;
+      }
+    }
+  }
+
+}

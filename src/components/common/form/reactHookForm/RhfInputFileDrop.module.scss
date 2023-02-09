@@ -1,0 +1,110 @@
+@use 'global' as *;
+
+//input type=file要素のスタイルです
+// <p className={styles["c-input-text"]}>
+//   <input type="text" className={styles["c-input-text__operation"]}
+//     {...register("homepage", {
+//       required: true
+//     })}
+//   />
+// </p>
+
+//まずinput type=file本体は隠す
+// .c-input-file__hide {
+//   @include visually-hidden();
+// }
+
+
+//以降にオリジナルのスタイルを書いていく
+
+.c-input-dropFile {
+  width: 100%;
+}
+
+.c-input-dropFile__dropZoon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dashed #c7c7c7;
+  padding: 30px 20px;
+}
+
+.c-input-dropFile__icon {
+  text-align: center;
+}
+
+.c-input-dropFile__icon-content {
+  @include font-size(40px);
+  color: #CCCCCC;
+}
+
+.c-input-dropFile__textArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 4em;
+  margin-top: 10px;
+}
+
+.c-input-dropFile__text {
+  @include font-size(14px);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.c-input-dropFile__button {
+  width: 100%;
+  max-width: 280px;
+  height: 40px;
+  position: relative;
+  background: #3c2cff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: $color-button;
+  font-size: 16px;
+  margin-top: 15px;
+  box-shadow: 0px 5px 20px rgb(89 89 89 / 20%);
+  cursor: pointer;
+  @include hover() {
+    opacity: 0.8;
+  }
+}
+
+.c-input-dropFile__button-text {
+  @include font-size(16px);
+  // font-weight: bold;
+  color: #fff;
+}
+
+.c-input-dropFile__button-icon {
+  color: #fff;
+  &:first-of-type {
+    margin-right: 8px;
+  }
+  &:last-of-type {
+    margin-left: 8px;
+  }
+}
+
+//リセットボタン
+.c-input-dropFile__resetButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 35px;
+  border: 1px solid #c7c7c7;
+  border-radius: 36px;
+  margin-top: 15px;
+  margin: 15px auto 0;
+  @include hover() {
+    opacity: 0.8;
+  }
+}
+.c-input-dropFile__resetButton-text {
+  @include font-size(16px);
+  font-weight: bold;
+  color: #999999;
+}

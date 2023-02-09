@@ -1,0 +1,45 @@
+@use '_main';
+
+@use 'global' as *;
+
+.p-column__tag-list {
+  margin-bottom: 1.5em;
+  text-align: center;
+
+  // @include min-screen("md") {
+  //   margin-bottom: 1.5em;
+  // }
+}
+
+.p-column__tag-list li {
+  margin-bottom: 1em;
+  display: inline-block;
+
+  &+li {
+    margin-left: 1em;
+  }
+}
+
+.p-column__tag-list li a {
+  @include font-size(14);
+
+  @include min-screen("md") {
+    @include font-size(17);
+  }
+
+  &:hover {
+    opacity: 0.7;
+    transition: all 0.7s;
+  }
+
+  &:before {
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    margin: 0 0.4em 0.2em 0;
+    display: inline-block;
+    border-right: 2px solid $color-main-accent;
+    border-bottom: 2px solid $color-main-accent;
+    transform: rotate(45deg);
+  }
+}

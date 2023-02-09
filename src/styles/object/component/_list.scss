@@ -1,0 +1,242 @@
+@use "sass:math";
+@use '@/styles/global' as *;
+
+.c-list {
+  display: block;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  @include min-screen("md") {
+    display: flex;
+  }
+
+  &.swiper-wrapper {
+    @include max-screen("md") {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__li {
+
+    width: 100%;
+    margin: 0 0 2em;
+
+    @include min-screen("md") {
+      width: 30%;
+      margin: 0 calc(calc(100% - 30%*3)/2) 3em 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    &-tag {
+      color: #FFF;
+      margin-bottom: 0.2em;
+      padding: 0.2em 0.4em 0.3em;
+      display: inline-block;
+
+      &.receipt {
+        background: $color-main-accent;
+      }
+
+      &.plan {
+        background: $color-main;
+      }
+
+      &.end {
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+        background: $color-gray-300;
+      }
+
+      &.it,
+      &.attracting,
+      &.manpower,
+      &.equipment,
+      &.manpower {
+        background: $color-main;
+      }
+
+      &.sightseeing {
+        background: $color-main-accent;
+      }
+    }
+
+    &-ph {
+      height: 200px;
+      margin-bottom: 0.7em;
+      position: relative;
+      overflow: hidden;
+
+      @include min-screen("md") {
+        height: auto;
+        padding-top: 60%;
+      }
+
+      img {
+        max-width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 0.7s;
+        object-fit: cover;
+      }
+
+    }
+
+    a {
+      &:hover {
+        .c-list__li-ph {
+          img {
+            transform: translate(-50%, -50%) scale(1.15);
+          }
+        }
+      }
+    }
+
+    &-textarea {
+      &-date {
+        color: #747474;
+        font-weight: 600;
+        margin-bottom: 0.6em;
+        @include font-size(15);
+
+        @include min-screen("md") {
+          @include font-size(16);
+        }
+      }
+
+      &-seminartitle {
+        color: #323232;
+        font-weight: 600;
+        @include font-size(16);
+        line-height: 1.4;
+
+        @include min-screen("md") {
+          @include font-size(19);
+        }
+      }
+
+      &-column {
+        margin-top: 0.5em;
+        @include font-size(13);
+        line-height: 1.4;
+
+        @include min-screen("md") {
+          @include font-size(20);
+        }
+      }
+    }
+  }
+
+  &__number {
+    >li {
+      margin-bottom: 0.5em;
+      text-indent: -1.2em;
+      padding-left: 1.1em;
+      list-style-type: none;
+      counter-increment: cnt;
+
+      &::before {
+        content: "(" counter(cnt)")";
+      }
+    }
+  }
+
+  &__number-circle {
+    >li {
+      margin-bottom: 0.5em;
+      text-indent: -1.2em;
+      padding-left: 1.1em;
+      list-style-type: none;
+    }
+  }
+
+  &.result {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    dl {
+      width: 47%;
+      text-align: center;
+
+      @include min-screen("md") {
+        width: 30%;
+      }
+
+      dt {
+        color: #FFF;
+        @include font-size(15);
+
+        @include min-screen("md") {
+          font-size: min(2vw, 30px);
+        }
+
+        @include min-screen(1500px) {
+          @include font-size(30);
+        }
+
+        font-weight: bold;
+        margin-bottom: 1em;
+        letter-spacing: 0.1em;
+
+        @include min-screen("md") {
+          margin-bottom: 2em;
+        }
+
+      }
+
+      &:last-child {
+        width: 55%;
+        margin: 1em auto 0;
+
+        @include min-screen("md") {
+          width: 30%;
+          margin: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+  &.no-link {
+    >li {
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      >a {
+        cursor: default;
+
+        &:hover {
+          .c-list__li-ph {
+            img {
+              transform: translate(-50%, -50%) scale(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.column-main__descTitle--secondary+ * {
+  margin-top: 2em;
+}

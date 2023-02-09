@@ -1,0 +1,51 @@
+@use '@/styles/global' as *;
+
+.c-btn {
+  &__more {
+    margin: 3em 0 0;
+    text-align: center;
+
+    a,
+    input[type="submit"] {
+      color: #FFF;
+      font-weight: 700;
+      @include font-size(18);
+      padding: 1em 4em 1.2em;
+      background: $color-main-accent;
+      border-radius: 3em;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+
+      @include min-screen("md") {
+        @include font-size(20);
+      }
+
+      &:hover {
+        opacity: 0.7;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  &__back {
+    a {
+      color: #000;
+      font-weight: 700;
+      @include font-size(13);
+      padding: 1em 4em 1.2em;
+      background: #E8E8E8;
+      border-radius: 3em;
+      display: inline-block;
+
+      @include min-screen("md") {
+        @include font-size(20);
+      }
+
+      &:hover {
+        opacity: 0.7;
+        transition: all 0.3s;
+      }
+    }
+  }
+}

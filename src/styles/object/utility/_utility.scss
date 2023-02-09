@@ -1,0 +1,19 @@
+@use '@/styles/global' as *;
+
+br {
+	&.pc-br {
+	  display: none;
+  
+	  @include min-screen("md") {
+		display: block;
+	  }
+	}
+  
+	&.sp-br {
+	  display: block;
+  
+	  @include min-screen("md") {
+		display: none;
+	  }
+	}
+  }

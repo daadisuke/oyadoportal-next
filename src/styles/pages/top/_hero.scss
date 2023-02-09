@@ -1,0 +1,121 @@
+@use 'global' as *;
+
+.p-kv {
+  &::before {
+    content: "";
+    width: 1px;
+    height: 50px;
+    background: #FFF;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    @include min-screen("md") {
+      display: block;
+      width: 100px;
+    }
+
+    @include min-screen(1560px) {
+      height: 110px;
+    }
+  }
+
+  max-width: 1400px;
+  margin: 0 auto 20px;
+  text-align: right;
+  position: relative;
+
+  @include min-screen("md") {
+    margin: 0 5% 50px;
+  }
+
+  @include min-screen(1500px) {
+    margin: 0 auto 50px;
+  }
+
+  &__copyarea {
+    text-align: left;
+    width: 100%;
+    position: static;
+    margin-top: -15%;
+
+    @include min-screen("md") {
+      position: absolute;
+      top: 60%;
+      left: 0;
+    }
+
+    &-maincopy {
+      margin-bottom: 0;
+
+      @include min-screen("md") {
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 90%;
+
+        @include min-screen("md") {
+          width: 50%;
+        }
+
+        // @include min-screen(1560px) {
+        //   width: 872px;
+        // }
+      }
+    }
+
+    &-bodycopy {
+      color: $color-main;
+      font-weight: 600;
+      padding: 0.7em 1em 0.7em 3%;
+      line-height: 1.6;
+      @include font-size(16);
+
+      @include min-screen("sm") {
+        @include font-size(25);
+        font-weight: 500;
+      }
+
+      @include min-screen("md") {
+        padding: 1em 1em 1em 1.3em;
+      }
+
+      background: #FFF;
+      text-align: left;
+      display: inline-block;
+
+      @include min-screen("md") {
+        font-size: min(1.5vw, 23px);
+      }
+    }
+  }
+
+  &__ph {
+    margin-left: auto;
+    width: 100%;
+    padding-top: 58%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+
+    @include min-screen("md") {
+      width: 70%;
+      padding-top: 40%;
+    }
+
+    // @include min-screen(1560px) {
+    //   width: 1090px;
+    //   height: 715px;
+    // }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+}

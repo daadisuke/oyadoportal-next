@@ -1,0 +1,169 @@
+@use '@/styles/global' as *;
+
+.c-heading {
+
+  &__main {
+
+    &-center {
+      color: $color-main;
+      @include font-size(45);
+      font-weight: 800;
+      margin-bottom: 1.5em;
+      text-align: center;
+      letter-spacing: 0.1em;
+      position: relative;
+
+      span {
+        color: $color-main-accent;
+        @include font-size(29);
+        margin-left: 0.5em;
+        padding: 0.3em 0.5em 0.4em;
+        display: inline-block;
+        border: 1px solid $color-main-accent;
+      }
+
+      &:after {
+        content: "";
+        width: 2em;
+        height: 1px;
+        margin: 0.5em auto 0;
+        display: block;
+        background: $color-main;
+      }
+
+      &.white {
+        color: #FFF;
+
+        &:after {
+          background: #FFF;
+        }
+      }
+
+    }
+
+    &-column {
+      color: $color-text;
+      @include font-size(45);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+  }
+
+  &__secondary {
+    &-detail {
+      color: #FFF;
+      @include font-size(33);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1em;
+      padding: 0.5em 0.5em 0.6em;
+      background: $color-main;
+    }
+
+    &__line {
+      color: $color-main;
+      @include font-size(17);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5em;
+      padding: 0 1em;
+      text-align: center;
+      display: inline-block;
+      position: relative;
+
+      @include min-screen("md") {
+        @include font-size(33);
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        width: 0.5em;
+        height: 1px;
+        background: #000;
+      }
+
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+      }
+
+    }
+  }
+
+  &__tertiary {
+    &-detail {
+      color: $color-text;
+      @include font-size(15);
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      padding: 0.5em 0;
+      border-bottom: 1px solid #B6B6B6;
+
+      @include min-screen("md") {
+        @include font-size(24);
+      }
+
+    }
+
+    &__gray {
+      color: #000;
+      @include font-size(15);
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      padding: 0.5em 0;
+      background: $color-gray-100;
+      text-align: center;
+
+      @include min-screen("md") {
+        @include font-size(24);
+      }
+    }
+  }
+
+  &__quaternary {
+    &-detail {
+      color: $color-text;
+      @include font-size(14);
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      padding: 0.5em 0;
+
+      @include min-screen("md") {
+        @include font-size(20);
+      }
+    }
+  }
+
+  &__pageTitle {
+    color: #FFF;
+    @include font-size(20);
+    font-weight: 700;
+    padding: 2.5em 0 2.3em;
+    letter-spacing: 0.1em;
+    background: $color-main;
+    text-align: center;
+
+    @include min-screen("md") {
+      @include font-size(45);
+    }
+
+    &:after {
+      content: "";
+      width: 2.5em;
+      height: 1px;
+      margin: 0.7em auto 0;
+      background: $color-main-accent;
+      display: block;
+    }
+  }
+
+}

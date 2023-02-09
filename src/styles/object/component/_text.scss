@@ -1,0 +1,30 @@
+@use 'global' as *;
+
+.c-text {
+  &__uline {
+    background: linear-gradient(transparent 70%, #FFD600 30%);
+  }
+
+  &__lead {
+    color: $color-main;
+    @include font-size(14);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 2.5em;
+
+    @include min-screen("md") {
+      @include font-size(20);
+      text-align: center;
+      line-height: 1;
+    }
+
+    &.white {
+      color: #FFF;
+    }
+  }
+
+  &__right {
+    text-align: right;
+  }
+}

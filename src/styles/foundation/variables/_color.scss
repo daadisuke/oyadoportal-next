@@ -1,0 +1,48 @@
+//main
+$color-main: #323C69 !default;
+$color-main-accent: #E4502B !default;
+$color-main-accent02: #FFD600 !default;
+$color-main-dark: #002241 !default;
+$color-main-base: #e6f1fe !default;
+$color-main-base02: #EBEBF2 !default;
+
+//グレースケール
+$color-black: #000 !default;
+$color-gray-900: #616161 !default;
+;
+$color-gray-700: #7C7C7C !default;
+;
+$color-gray-500: #D1D1D1 !default;
+;
+$color-gray-300: #949494 !default;
+;
+$color-gray-100: #F4F4F4 !default;
+;
+$color-white: #fff !default;
+
+$color-red: #F44545 !default;
+
+$color-lorange: #FFF3EC !default;
+
+$color-lblue: #DFF2FF !default;
+
+//文字
+$color-text: #323232 !default;
+$color-text02: #8B90A0 !default;
+
+$color-active: #175ae2 !default;
+
+//SNS
+$color-sns-facebook: #375B95 !default;
+$color-sns-twitter: #4BAEEA !default;
+$color-sns-line: #04BB00 !default;
+
+
+//フォームパーツ用カラー
+$color-form-input-gray: $color-gray-100; //汎用グレーカラー
+$color-form-input-gray02: $color-gray-500; //汎用グレーカラー
+
+$color-form-input-base: $color-main-base; //ラジオの初期状態の色
+$color-form-input-text: $color-text; //ラジオやテキストインプットの文字色
+$color-form-input-valid: $color-main; //ラジオやチェックボックスの選択済み色
+$color-form-input-active: $color-active; //ホバーやフォーカスが当たってる状態

@@ -1,0 +1,58 @@
+@use '/src/styles/global' as *;
+
+//select要素のスタイルです
+// <div className={styles["input-select"]}>
+//   <select className={styles["input-select__operation"]} >
+//     <option value="0">選択してください</option>
+//     <option value="1">あああああ</option>
+//   </select>
+// </div>
+
+//selectデフォルトのスタイルをリセット
+.input-select__operation {
+  appearance: none;
+}
+
+//以降にオリジナルのスタイルを書いていく
+
+.input-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  &.-width--original {
+    width: inherit;
+  }
+  //矢印アイコン
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: #333333 transparent transparent transparent;
+    z-index: 99;
+  }
+}
+
+//select要素の本体（実際に操作する場所）
+.input-select__operation {
+  background: #f2f5f9;
+  border: 1px solid #c7c7c7;
+  border-radius: 6px;
+  padding: 11px 40px 11px 15px;
+  width: 100%;
+  @include font-size(16px);
+  color: #333;
+  line-height: 1;
+  cursor: pointer;
+  &:focus {
+    border-color: #2a96f8;
+    box-shadow: 0 0 0 1px #2a96f8 inset;
+    outline: none; // フォーカスリングはbox-shadowで作るのでoutlineは無効化する
+  }
+}

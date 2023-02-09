@@ -1,0 +1,13 @@
+//ブレイクポイントを返す関数です
+
+@use '@/styles/foundation/variables/breakpoints' as *;
+
+@function screen($size) {
+  @if map-get($breakpoints, $size) {
+    @return map-get($breakpoints, $size);
+  }
+
+  @else {
+    @return $size;
+  }
+}

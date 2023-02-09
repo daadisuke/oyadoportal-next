@@ -1,0 +1,39 @@
+@use 'global' as *;
+
+.wp-pagenavi {
+  margin-top: 2em;
+  text-align: center;
+
+  a,
+  span {
+    padding: 0 0.5em;
+    display: inline-block;
+    vertical-align: middle;
+
+    &.current {
+      color: $color-main-accent;
+      line-height: 1.7;
+      border-bottom: 1px solid $color-main-accent;
+    }
+
+    &.previouspostslink {
+      content: "";
+      width: 0.6em;
+      height: 0.6em;
+      padding: 0;
+      border-bottom: 2px solid #e4502b;
+      border-left: 2px solid #e4502b;
+      transform: rotate(45deg);
+    }
+
+    &.nextpostslink {
+      content: "";
+      width: 0.6em;
+      height: 0.6em;
+      padding: 0;
+      border-top: 2px solid #e4502b;
+      border-right: 2px solid #e4502b;
+      transform: rotate(45deg);
+    }
+  }
+}

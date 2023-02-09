@@ -1,0 +1,106 @@
+@use '@/styles/global' as *;
+@use '@/styles/appearance';
+
+.supervision {
+    margin-top: 2em;
+    padding: 2em;
+    border: 1px solid $color-gray-100;
+    text-align: center;
+  }
+
+  .supervision .supervision__title {
+    padding: 0 1em;
+    margin: 0 0 1.3em;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 0.5em;
+      height: 1px;
+      background: #000;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+
+  .supervision__info {
+    display: block;
+
+    @include min-screen("md") {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .supervision__info-ph {
+    width: 170px;
+    margin: 0 auto 1em;
+    padding-top: 50%;
+    background: $color-gray-100;
+    position: relative;
+
+    @include min-screen("md") {
+      width: 20%;
+      margin-right: 4%;
+      margin-bottom: 0;
+      padding-top: 20%;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .supervision__info-text {
+    flex: 1;
+    text-align: left;
+
+    dt {
+      @include font-size(14);
+      font-weight: 700;
+      margin-bottom: 0.7em;
+      padding: 0.3em 0 0.7em;
+      border-bottom: 1px solid $color-gray-100;
+
+      @include min-screen("md") {
+        @include font-size(20);
+      }
+
+      span {
+        @include font-size(13);
+        font-weight: 500;
+        margin-bottom: 0.8em;
+        display: block;
+
+        @include min-screen("md") {
+          @include font-size(16);
+        }
+      }
+    }
+
+    dd {
+      @include font-size(13);
+      font-weight: 400;
+      line-height: 1.6;
+
+      @include min-screen("md") {
+        @include font-size(16);
+      }
+    }
+  }
