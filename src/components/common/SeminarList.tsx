@@ -24,8 +24,7 @@ import styles from './SeminarList.module.scss';
 //= ===========================各種インポートここまで
 
 export default function SeminarList(data) {
-  // console.log(data);
-  // console.log(data.datacolumntag);
+
   return (
       <>
         <div className={`${styles['swiper-wrapper']} ${styles['c-list']} ${styles['seminar']}`}>

@@ -23,17 +23,11 @@ import Link from 'next/link';
 // };
 
 const ColumnCategoryTag = (data) => {
-  // console.log(data.data);
-  // console.log(data['data'][0].id);
-  // console.log(data['data'][0]['tag'][0].link);
-  
-  // console.log([data][0].id);
-  // console.log(tag);
 
   if(data['data'][0].id === 2){
     return (
       <>
-        <Link href={`${data['data'][0]['tag'][0].link}`}>
+        <Link href={`/column_category/${data['data'][0]['tag'][0].slug}`}>
           ITサポート
         </Link>
       </>
@@ -41,7 +35,7 @@ const ColumnCategoryTag = (data) => {
   } else if(data['data'][0].id === 4){
     return (
       <>
-        <Link href={`${data['data'][0]['tag'][1].link}`}>
+        <Link href={`/column_category/${data['data'][0]['tag'][1].slug}`}>
           人手不足解消
         </Link>
       </>
@@ -49,7 +43,7 @@ const ColumnCategoryTag = (data) => {
   } else if(data['data'][0].id === 6){
     return (
       <>
-        <Link href={`${data['data'][0]['tag'][2].link}`}>
+        <Link href={`/column_category/${data['data'][0]['tag'][2].slug}`}>
           設備導入・改修
         </Link>
       </>
@@ -57,7 +51,7 @@ const ColumnCategoryTag = (data) => {
   } else if(data['data'][0].id === 5){
     return (
       <>
-        <Link href={`${data['data'][0]['tag'][3].link}`}>
+        <Link href={`/column_category/${data['data'][0]['tag'][3].slug}`}>
           資金不足解消
         </Link>
       </>
@@ -65,7 +59,7 @@ const ColumnCategoryTag = (data) => {
   } else if(data['data'][0].id === 3){
     return (
       <>
-        <Link href={`${data['data'][0]['tag'][4].link}`}>
+        <Link href={`/column_category/${data['data'][0]['tag'][4].slug}`}>
           集客サポート
         </Link>
       </>

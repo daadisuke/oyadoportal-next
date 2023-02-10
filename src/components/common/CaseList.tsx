@@ -43,7 +43,7 @@ import styles from './CaseList.module.scss';
 //= ===========================各種インポートここまで
 
 export default function CaseList(datacace) {
-//   console.log(datacace);
+
   return (
       <>
 

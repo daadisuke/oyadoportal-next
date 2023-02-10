@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
 
-import ColumnList from '@/components/common/ColumnList';
+import ColumnCategoryList from '@/components/common/ColumnCategoryList';
 import ColumnCategoryTagLink from '@/components/common/ColumnCategoryTagLink';
 
 //libs
@@ -39,7 +39,8 @@ export const getStaticProps = async () => {
 }
 
 export default function Column({datacolumn,datacolumntag}) {
-    // console.log(datacolumn[0]['column_category'][0]);
+
+    // console.log(datacolumntag);
 
     return (
         <>
@@ -59,12 +60,13 @@ export default function Column({datacolumn,datacolumntag}) {
                             datacolumn={datacolumn}
                         />
                     </ul>
-                    
-                    <h2 className={styles['column-main__descTitle--secondary']}>全て</h2>
 
-                    <ColumnList
+                    <h2 className={styles['column-main__descTitle--secondary']}>ITサポート</h2>
+
+                    <ColumnCategoryList
                         datacolumn={datacolumn}
                         datacolumntag={datacolumntag}
+                        tagId={2}
                     />
 
                 </div>

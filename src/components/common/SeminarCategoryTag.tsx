@@ -32,8 +32,6 @@ const SeminarCategoryTag = (data) => {
 
   // const time = useTime(1000);
 
-  // console.log(time);
-
   // const [date, setDate] = useState(new Date());
   const time = new Date().toLocaleString();
 

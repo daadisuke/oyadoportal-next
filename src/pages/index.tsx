@@ -49,10 +49,6 @@ export const getStaticProps = async () => {
 
 export default function Home({datacace,datacolumn,datacolumntag,dataseminar}) {
 
-    // const datacol = datacolumn.splice( 0, 3 );
-
-    // console.log(datacol);
-
   return (
     <>
       <main>

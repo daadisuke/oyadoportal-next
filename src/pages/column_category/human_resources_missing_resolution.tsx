@@ -5,10 +5,8 @@ import Image from 'next/image';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
 
-import ColumnCategoryName from '@/components/common/ColumnCategoryName';
-import ColumnList from '@/components/common/ColumnList';
-
-import ColumnSupervisor from '@/components/common/ColumnSupervisor';
+import ColumnCategoryList from '@/components/common/ColumnCategoryList';
+import ColumnCategoryTagLink from '@/components/common/ColumnCategoryTagLink';
 
 //libs
 import { getPath } from '@/libs/pathManager';
@@ -19,37 +17,18 @@ import styles from './index.module.scss';
 //= ===========================各種インポートここまで
 
 // レイアウトを定義
-ColumSlug.getLayout = (page: ReactElement) => (
+Column.getLayout = (page: ReactElement) => (
     <>
         <Default>{page}</Default>
     </>
 );
 
-export const getStaticPaths = async () => {
+export const getStaticProps = async () => {
+    const res = await fetch("https://012cloud.jp/oyado-portal/wp-json/wp/v2/column?_embed")
+    const datacolumn = await res.json()
 
-    // console.log(context);
-
-    const res = await fetch(`https://012cloud.jp/oyado-portal/wp-json/wp/v2/column_category`)
-    const data=await res.json()
-    
-    const paths = data.map((value) => ({
-        params: { slug: `${value.slug}` },
-    }))
-
-    return {
-        paths,
-        fallback:false
-    }
-}
-
-export const getStaticProps = async (context) => {
-
-    const slug=context.params.slug
-    const res02 = await fetch(`https://012cloud.jp/oyado-portal/wp-json/wp/v2/column/${slug}`)
-    const datacolumn = await res02.json()
-
-    const res03 = await fetch("https://012cloud.jp/oyado-portal/wp-json/wp/v2/column_category")
-    const datacolumntag = await res03.json()
+    const res02 = await fetch("https://012cloud.jp/oyado-portal/wp-json/wp/v2/column_category")
+    const datacolumntag = await res02.json()
 
     return {
         props:{
@@ -59,9 +38,10 @@ export const getStaticProps = async (context) => {
     }
 }
 
-export default function ColumSlug(data) {
-    console.log(data);
-    // console.log(data);
+export default function Column({datacolumn,datacolumntag}) {
+
+    // console.log(datacolumntag);
+
     return (
         <>
             <div className={styles['c-heading']}>
@@ -74,19 +54,19 @@ export default function ColumSlug(data) {
 
                 <div className={styles['l-section__inner']}>
 
-                    <h2 className={styles['column-main__descTitle--secondary']}>
-                        {/* <ColumnCategoryName
-                            data={[
-                                {
-                                    id: data.datacolumn['column_category'][0]
-                                },
-                            ]}
-                        /> */}
-                    </h2>
+                    <ul className={styles['p-column__tag-list']}>
+                        <li><Link href={`/column/`}>全て</Link></li>
+                        <ColumnCategoryTagLink
+                            datacolumn={datacolumn}
+                        />
+                    </ul>
 
-                    <ColumnList
+                    <h2 className={styles['column-main__descTitle--secondary']}>人手不足解消</h2>
+
+                    <ColumnCategoryList
                         datacolumn={datacolumn}
                         datacolumntag={datacolumntag}
+                        tagId={4}
                     />
 
                 </div>
