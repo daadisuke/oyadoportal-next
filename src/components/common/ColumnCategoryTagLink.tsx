@@ -1,19 +1,15 @@
 /**
  *
- * パンくずのコンポーネントです。
- *
- * @usage
- *
+ * コラム一覧ページのカテゴリタグのリンクボタンのコンポーネントです
+ * 
  */
-
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 // next.jsの機能
 import Link from 'next/link';
 
-// 型
-// import { BreadcrumbList } from 'types/breadcrumb'
+
 
 //= ===========================各種インポートここまで
 
@@ -22,7 +18,7 @@ import Link from 'next/link';
 //   tag: object;
 // };
 
-export default function ColumnCategoryTagLink(data) {
+export default function ColumnCategoryTagLink(data:any) {
 
   let categoryFlag01:boolean = false;
   let categoryFlag02:boolean = false;
@@ -32,7 +28,7 @@ export default function ColumnCategoryTagLink(data) {
 
   return (
     <>
-      {data.datacolumn.map((value)=>{
+      {data.datacolumn.map((value:any)=>{
         console.log(value['column_category'][0]);
             
             if(value['column_category'][0] === 2 && categoryFlag01 == false){

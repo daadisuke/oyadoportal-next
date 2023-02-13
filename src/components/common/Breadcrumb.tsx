@@ -32,8 +32,7 @@ import Link from 'next/link';
 // // components
 import IconFont from './IconFont';
 
-// 型
-// import { BreadcrumbList } from 'types/breadcrumb'
+
 
 // style
 import styles from './Breadcrumb.module.scss';

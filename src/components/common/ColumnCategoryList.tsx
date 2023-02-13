@@ -1,6 +1,6 @@
 /**
  *
- * コラム一覧のコンポーネントです。
+ * コラムカテゴリ一覧のコンポーネントです。
  *
  */
 
@@ -9,26 +9,50 @@ import ReactDOM from 'react-dom';
 
 // next.jsの機能
 import Link from 'next/link';
-
 import Image from 'next/image';
 
 // // components
 import ColumnCategoryTag from './ColumnCategoryTag';
-
-// 型
-// import { BreadcrumbList } from 'types/breadcrumb'
 
 // style
 import styles from './ColumnList.module.scss';
 
 //= ===========================各種インポートここまで
 
-export default function ColumnCategoryList(data) {
+// type Props = {
+//   data: DataList
+// };
+
+// type DataItem = {
+//   datacolumn:
+// };
+
+// type DataColumnItem = {
+//   id: number;
+//   company_name: string;
+//   title: any;
+//   _embedded: any;
+//   rendered: string;
+//   description: string;
+// };
+
+// type DataColumnTagItem = {
+//   id: number;
+//   company_name: string;
+//   title: any;
+//   _embedded: any;
+//   rendered: string;
+//   description: string;
+// };
+
+// type DataList = DataItem[];
+
+export default function ColumnCategoryList(data:any) {
 
   return (
       <>
         <ul className={`${styles['c-list']} ${styles['seminar']}`}>
-                {data.datacolumn.map((value)=>{
+                {data.datacolumn.map((value:any)=>{
                     console.log(value);
                     if(value['column_category'][0] == data.tagId){
                       return(

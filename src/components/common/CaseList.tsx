@@ -1,25 +1,6 @@
 /**
  *
- * パンくずのコンポーネントです。
- *
- * @usage
- * import Breadcrumb from '@/components/common/Breadcrumb'
- *
- * <Breadcrumb
- *   data={[
- *     {
- *       name: 'home',
- *       path: '/mypage',
- *     },
- *     {
- *       name: 'プロフィール',
- *       path: '/mypage/profile',
- *     },
- *     {
- *       name: 'プロフィール編集',
- *     },
- *   ]}
- * />
+ * 事例紹介のコンポーネントです。
  *
  */
 
@@ -34,23 +15,36 @@ import Image from 'next/image';
 // // components
 import IconFont from './IconFont';
 
-// 型
-// import { BreadcrumbList } from 'types/breadcrumb'
-
 // style
 import styles from './CaseList.module.scss';
 
 //= ===========================各種インポートここまで
 
-export default function CaseList(datacace) {
+type Props = {
+    datacace: DatacaseList;
+    count?: number | undefined;
+};
+
+type DatacaseItem = {
+    id: number;
+    company_name: string;
+    title: any;
+    _embedded: any;
+    rendered: string;
+    description: string;
+};
+
+type DatacaseList = DatacaseItem[];
+
+export default function CaseList({ datacace, count }: Props) {
 
   return (
       <>
 
           <ul className={styles['p-case__list']}>
-              {datacace.datacace.map((value,index)=>{
+              {datacace.map((value,index:number)=>{
                 //   console.log(value.company_name);
-                if(index < datacace.count ){
+                if(index < count ){
                   return(
                       <li className={styles['p-case__list-li']}>
                           <Link href={`/case/${value.id}`}>

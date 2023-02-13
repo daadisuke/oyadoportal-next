@@ -1,8 +1,6 @@
 /**
  *
- * パンくずのコンポーネントです。
- *
- * @usage
+ * セミナーのカテゴリタグのコンポーネントです
  *
  */
 
@@ -17,8 +15,7 @@ import useTime from '@/hooks/useTime';
 import styles from './SeminarCategoryTag.module.scss';
 
 
-// 型
-// import { BreadcrumbList } from 'types/breadcrumb'
+
 
 //= ===========================各種インポートここまで
 
@@ -69,7 +66,6 @@ const SeminarCategoryTag = (data) => {
       </>
     );
   }
-
 
 };
 

@@ -75,7 +75,9 @@ export default function Seminar({dataseminar}) {
 
                     </div> */}
 
-                    <SeminarList dataseminar={dataseminar} dateperiodstart={dataseminar.overview_period_start_time} dateperiodend={dataseminar.overview_period_end_time} />
+                    <SeminarList
+                        dataseminar={dataseminar}
+                    />
 
                 </div>
 

@@ -43,7 +43,7 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
       <title>{title ? `${title}${!titleAllReplace ? ' | 株式会社お宿ポータル' : ''}` : `株式会社お宿ポータル`}</title>
       <meta
         name="description"
-        content={description ? `${description}` : `ディスクリプションが入ります`}
+        content={description ? `${description}` : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`}
         key="description"
       />
 
@@ -55,7 +55,7 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
       />
       <meta
         property="og:description"
-        content={description ? `${description}` : `ディスクリプションが入ります`}
+        content={description ? `${description}` : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`}
         key="og:description"
       />
       <meta
@@ -65,19 +65,19 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
       />
       <meta
         property="og:url"
-        content={ogurl ? `${ogurl}` : `https://callshare-wiz012.vercel.app/`}
+        content={ogurl ? `${ogurl}` : `https://012cloud.jp/oyado-portal/`}
         key="og:url"
       />
       <meta
         property="og:site_name"
-        content="サイト名が入ります"
+        content="株式会社お宿ポータル"
         key="og:site_name"
       />
-      {/* <meta
+      <meta
         property='og:image'
-        content={ogimage ? `${ogimage}` : `${baseUrl}/img/ogimage.png`}
+        content={ogimage ? `${ogimage}` : `https://012cloud.jp/img/ogimage.png`}
         key='og:image'
-      /> */}
+      />
 
       {/* OGP twitter用設定 */}
       <meta
@@ -92,19 +92,19 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
       />
       <meta
         name="twitter:description"
-        content={description ? `${description}` : `ディスクリプションが入ります`}
+        content={description ? `${description}` : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`}
         key="twitter:description"
       />
       <meta
         name="twitter:url"
-        content={ogurl ? `${ogurl}` : `https://callshare-wiz012.vercel.app/`}
+        content={ogurl ? `${ogurl}` : `https://012cloud.jp/oyado-portal/`}
         key="twitter:url"
       />
-      {/* <meta
+      <meta
         name='twitter:image'
-        content={ogimage ? `${ogimage}` : `${baseUrl}/img/ogimage.png`}
+        content={ogimage ? `${ogimage}` : `https://012cloud.jp/img/ogimage.png`}
         key='twitter:image'
-      /> */}
+      />
     </Head>
   );
 };

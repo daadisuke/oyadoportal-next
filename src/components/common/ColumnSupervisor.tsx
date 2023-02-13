@@ -1,8 +1,6 @@
 /**
  *
- * パンくずのコンポーネントです。
- *
- * @usage
+ * コラム詳細のこの記事の監修者のコンポーネントです
  *
  */
 
@@ -13,8 +11,7 @@ import ReactDOM from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// 型
-// import { BreadcrumbList } from 'types/breadcrumb'
+
 
 // style
 import styles from './ColumnSupervisor.module.scss';

@@ -1,8 +1,6 @@
 /**
  *
- * パンくずのコンポーネントです。
- *
- * @usage
+ * コラムのカテゴリタグのコンポーネントです
  *
  */
 
@@ -12,17 +10,27 @@ import ReactDOM from 'react-dom';
 // next.jsの機能
 import Link from 'next/link';
 
-// 型
-// import { BreadcrumbList } from 'types/breadcrumb'
+
 
 //= ===========================各種インポートここまで
 
 // type Props = {
-//   id: string;
-//   tag: object;
+//   id: number;
+//   tag: DataColumnTagList;
 // };
 
-const ColumnCategoryTag = (data) => {
+// type DataColumnTagItem = {
+//   id: number;
+//   company_name: string;
+//   title: any;
+//   _embedded: any;
+//   rendered: string;
+//   description: string;
+// };
+
+// type DataColumnTagList = DataColumnTagItem[];
+
+export default function ColumnCategoryTag(data:any) {
 
   if(data['data'][0].id === 2){
     return (
@@ -66,8 +74,4 @@ const ColumnCategoryTag = (data) => {
     );
   }
 
-  
-
 };
-
-export default ColumnCategoryTag;

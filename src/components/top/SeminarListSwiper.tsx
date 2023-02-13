@@ -1,3 +1,9 @@
+/**
+ *
+ * トップページのセミナー一覧のコンポーネントです。
+ *
+ */
+
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react' //カルーセル用のタグをインポート
 import SwiperCore, {Navigation ,Scrollbar} from 'swiper' //使いたい機能をインポート
@@ -11,7 +17,7 @@ import 'swiper/css';
 
 SwiperCore.use([Navigation, Scrollbar]) 
 
-export default function SeminarListSwiper(data) {
+export default function SeminarListSwiper(data:any) {
   return (
     <Swiper
       slidesPerView={1} //一度に表示するスライドの数
