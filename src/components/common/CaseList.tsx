@@ -67,7 +67,25 @@ export default function CaseList(datacace) {
                           </Link>
                       </li>
                   )
-              }})}
+              } else {
+                    return(
+                        <li className={styles['p-case__list-li']}>
+                            <Link href={`/case/${value.id}`}>
+                                <p className={styles['p-case__list-li-name']}>{value.company_name}</p>
+                                <div className={styles['p-case__list-li-wrap']}>
+                                    <p className={styles['p-case__list-li-ph']}>
+                                        <Image src={`${value._embedded['wp:featuredmedia'][0].source_url}`} width={420} height={166} alt="" />
+                                    </p>
+                                    <dl>
+                                        <dt>{value.title.rendered}</dt>
+                                        <dd>{value.description}</dd>
+                                    </dl>
+                                </div>
+                            </Link>
+                        </li>
+                    )
+                }
+              })}
         </ul>
 
       </>
