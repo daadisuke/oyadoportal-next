@@ -27,7 +27,7 @@ export default function Contact() {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors, isValid, isSubmitting },
     } = useForm(
         {
             mode: 'onChange',
@@ -35,28 +35,45 @@ export default function Contact() {
         }
     );
 
-    const contactList = ['無料相談', '資料請求', 'ITサポートについて', '集客サポートについて', '人手不足解消について', '資金不足解消について', '設備導入、改修サポートについて'];
+    // const contactList = ['無料相談', '資料請求', 'ITサポートについて', '集客サポートについて', '人手不足解消について', '資金不足解消について', '設備導入、改修サポートについて'];
 
-    // const [contactItem, contactItems] = useState<MyFavoriteFoods[]>([
-    //     {
-    //       id: "sushi",
-    //       name: "寿司",
-    //       checked: false,
-    //       disabled: false,
-    //     },
-    //     {
-    //       id: "yakiniku",
-    //       name: "焼肉",
-    //       checked: false,
-    //       disabled: false,
-    //     },
-    //     {
-    //       id: "khao_mangai",
-    //       name: "カオマンガイ",
-    //       checked: false,
-    //       disabled: false,
-    //     },
-    //   ]);
+    const [contactList, setContactList] = useState<ContactList[]>([
+        {
+            text: "無料相談",
+            checked: false,
+            disabled: false,
+        },
+        {
+            text: "資料請求",
+            checked: false,
+            disabled: false,
+        },
+        {
+            text: "ITサポートについて",
+            checked: false,
+            disabled: false,
+        },
+        {
+            text: "集客サポートについて",
+            checked: false,
+            disabled: false,
+        },
+        {
+            text: "人手不足解消について",
+            checked: false,
+            disabled: false,
+        },
+        {
+            text: "資金不足解消について",
+            checked: false,
+            disabled: false,
+        },
+        {
+            text: "設備導入、改修サポートについて",
+            checked: false,
+            disabled: false,
+        },
+      ]);
 
 
     const onSubmit = (data) => console.log(data);
@@ -87,17 +104,30 @@ export default function Contact() {
                 <dl>
                     <dt>お問い合わせ項目<span>必須</span></dt>
                     <dd>
-                        {contactList.map((text, index) => (
+                        {contactList.map((item, index) => (
                             <span key={index}>
                                 <input
                                 type="checkbox"
                                 id={`your_contact_item_${index}`}
-                                value={text}
-                                {...register(`your_contact_item`, {})}
+                                defaultChecked={item.checked}
+                                disabled={item.disabled}
+                                value={item.text}
+                                {...register(`your_contact_item`, {
+                                    validate: {
+                                        atLeastOneRequired: (value) =>
+                                          (value.length >= 1) || "1つ以上選択してください",
+                                      }
+                                })}
                                 />
-                                <label htmlFor={`your_contact_item_${index}`}>{text}</label>
+                                <label htmlFor={`your_contact_item_${index}`}>{item.text}</label>
                             </span>
                         ))}
+                        {errors.your_contact_item && (
+                            <p>
+                            {errors.your_contact_item.type}: {errors.your_contact_item.message}
+                            </p>
+                        )}
+                        
                     </dd>
                     <dt><label htmlFor="your_facility_name">施設名</label><span>必須</span></dt>
                     <dd>
