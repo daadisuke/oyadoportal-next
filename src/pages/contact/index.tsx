@@ -28,7 +28,12 @@ export default function Contact() {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm(
+        {
+            mode: 'onChange',
+            criteriaMode: 'all',
+        }
+    );
 
     const contactList = ['無料相談', '資料請求', 'ITサポートについて', '集客サポートについて', '人手不足解消について', '資金不足解消について', '設備導入、改修サポートについて'];
 
@@ -96,23 +101,73 @@ export default function Contact() {
                     </dd>
                     <dt><label htmlFor="your_facility_name">施設名</label><span>必須</span></dt>
                     <dd>
-                        <input type="text" name="your_facility_name" placeholder="お宿ポータル" />
+                        <input
+                        type="text"
+                        placeholder="お宿ポータル"
+                        {...register('your_facility_name', {
+                            required: {
+                              value: true,
+                              message: '入力が必須の項目です。',
+                            }
+                          })}
+                        />
+                        {errors.your_facility_name?.message && <div>{errors.your_facility_name.message}</div>}
                     </dd>
                     <dt><label htmlFor="your_name">氏名</label><span>必須</span></dt>
                     <dd>
-                        <input type="text" name="your_name" placeholder="山田 太郎" />
+                        <input
+                        type="text"
+                        placeholder="山田 太郎"
+                        {...register('your_name', {
+                            required: {
+                              value: true,
+                              message: '入力が必須の項目です。',
+                            }
+                          })}
+                        />
+                        {errors.your_name?.message && <div>{errors.your_name.message}</div>}
                     </dd>
                     <dt><label htmlFor="your_name_kana">フリガナ</label><span>必須</span></dt>
                     <dd>
-                        <input type="text" name="your_name_kana" placeholder="ヤマダ タロウ" />
+                        <input
+                            type="text"
+                            placeholder="ヤマダ タロウ"
+                            {...register('your_name_kana', {
+                                required: {
+                                value: true,
+                                message: '入力が必須の項目です。',
+                                }
+                            })}
+                        />
+                        {errors.your_name_kana?.message && <div>{errors.your_name_kana.message}</div>}
                     </dd>
                     <dt><label htmlFor="your_email">メールアドレス</label><span>必須</span></dt>
                     <dd>
-                        <input type="text" name="your_email" placeholder="info@example.com" />
+                        <input
+                            type="text"
+                            placeholder="info@example.com"
+                            {...register('your_email', {
+                                required: {
+                                value: true,
+                                message: '入力が必須の項目です。',
+                                }
+                            })}
+                        />
+                        {errors.your_email?.message && <div>{errors.your_email.message}</div>}
                     </dd>
                     <dt><label htmlFor="your_email_confirm">メールアドレス（確認用）</label><span>必須</span></dt>
                     <dd>
-                        <input type="text" name="your_email_confirm" placeholder="メールアドレスをもう一度入力" />
+                        <input
+                            type="text"
+                            placeholder="メールアドレスをもう一度入力"
+                            {...register('your_email_confirm', {
+                                required: {
+                                value: true,
+                                message: '入力が必須の項目です。',
+                                }
+                            })}
+                        />
+                        {errors.your_email_confirm?.message && <div>{errors.your_email_confirm.message}</div>}
                     </dd>
                     <dt><label htmlFor="your_zip_code">郵便番号</label></dt>
                     <dd>
@@ -189,11 +244,30 @@ export default function Contact() {
                     </dd>
                     <dt><label htmlFor="your_phone_number">お電話番号</label><span>必須</span></dt>
                     <dd>
-                        <input type="text" name="your_phone_number" placeholder="お電話番号" />
+                        <input
+                            type="text"
+                            placeholder="お電話番号"
+                            {...register('your_phone_number', {
+                                required: {
+                                value: true,
+                                message: '入力が必須の項目です。',
+                                }
+                            })}
+                        />
+                        {errors.your_phone_number?.message && <div>{errors.your_phone_number.message}</div>}
                     </dd>
                     <dt><label htmlFor="your_contact_content">お問い合わせ内容</label><span>必須</span></dt>
                     <dd>
-                        <textarea name="your_contact_content" placeholder="入力してください"></textarea>
+                        <textarea
+                            placeholder="入力してください"
+                            {...register('your_contact_content', {
+                                required: {
+                                value: true,
+                                message: '入力が必須の項目です。',
+                                }
+                            })}
+                        />
+                        {errors.your_contact_content?.message && <div>{errors.your_contact_content.message}</div>}
                     </dd>
                 </dl>
                 
@@ -202,7 +276,16 @@ export default function Contact() {
             <div className={styles['contact-main__check']}>
                 <p><a href="">個人情報保護方針</a>を必ずお読みください。<br />上記の内容に同意いただいた場合は、確認画面へお進みください。</p>
                 <p className={styles['contact-main__checkbox']}>
-                    <input type="checkbox" name="agree" />
+                    <input
+                        type="checkbox"
+                        {...register('agree', {
+                            required: {
+                            value: true,
+                            message: '個人情報保護方針に同意してください',
+                            }
+                        })}
+                    />
+                    {errors.agree?.message && <div>{errors.agree.message}</div>}
                     <label htmlFor="agree">個人情報保護方針に同意する</label>
                 </p>
                 <p className={styles['c-btn__more']}>
