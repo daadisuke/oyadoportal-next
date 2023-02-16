@@ -2,6 +2,7 @@
 import type { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SiteHead from '@/components/layouts/includes/SiteHead'
 
 import Breadcrumb from '@/components/common/Breadcrumb';
 import SeminarList from '@/components/common/SeminarList';
@@ -13,6 +14,10 @@ import Default from '@/components/layouts/Default';
 import styles from './index.module.scss';
 
 //= ===========================各種インポートここまで
+
+<SiteHead
+    title='ホテル旅館の為の実践セミナー'
+/>
 
 // レイアウトを定義
 Seminar.getLayout = (page: ReactElement) => (

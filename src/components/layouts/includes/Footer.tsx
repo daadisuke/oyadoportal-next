@@ -20,7 +20,7 @@ export const Footer = () => {
             <p className={styles['contact__text']}>お気軽にご相談ください</p>
 
             <p className={styles['contact__btn']}>
-                <Link href="/">
+                <Link href="/contact/">
                     <Image src="/top/contact__btn.svg" alt="" width={40} height={32} />お問い合わせはこちら
                 </Link>
             </p>

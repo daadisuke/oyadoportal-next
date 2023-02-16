@@ -2,6 +2,7 @@
 import type { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SiteHead from '@/components/layouts/includes/SiteHead'
 
 import Breadcrumb from '@/components/common/Breadcrumb';
 import CaseList from '@/components/common/CaseList';
@@ -13,6 +14,10 @@ import Default from '@/components/layouts/Default';
 import styles from './index.module.scss';
 
 //= ===========================各種インポートここまで
+
+<SiteHead
+    title='事例紹介'
+/>
 
 // レイアウトを定義
 Case.getLayout = (page: ReactElement) => (
