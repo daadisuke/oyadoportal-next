@@ -39,7 +39,7 @@ export const Header = () => {
                 </nav>
             </div>
 
-            <button className={styles['fullScreenMenu-button']} type="button" data-fullScreenMenu-trigger="js-fullScreenMenu-content" aria-label="メニューを開く">
+            <button className={styles['fullScreenMenu-button']} type="button" aria-label="メニューを開く">
                 <span className={styles['fullScreenMenu-button__line']}></span>
                 <span className={styles['fullScreenMenu-button__line']}></span>
                 <span className={styles['fullScreenMenu-button__line']}></span>

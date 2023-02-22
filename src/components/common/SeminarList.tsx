@@ -53,7 +53,7 @@ export default function SeminarList({ dataseminar ,count }: Props) {
                 if(count){
                     if(index < count){
                         return(
-                            <div className={`${styles['swiper-slide']} ${styles['c-list__li']}`}>
+                            <div key={index} className={`${styles['swiper-slide']} ${styles['c-list__li']}`}>
                             <Link href={`/seminar/${value.id}`}>
                                 <SeminarCategoryTag
                                     dateperiodstart={value.overview_period_start_time}

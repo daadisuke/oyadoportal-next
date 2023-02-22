@@ -105,6 +105,10 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
         content={ogimage ? `${ogimage}` : `https://012cloud.jp/img/ogimage.png`}
         key='twitter:image'
       />
+      <link
+        rel="shortcut icon"
+        href="https://012cloud.jp/oyado-portal/assets/img/base/favicon.ico">
+      </link>
     </Head>
   );
 };

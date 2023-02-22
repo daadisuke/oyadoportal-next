@@ -38,9 +38,9 @@ export default function SeminarListSwiper(data:any) {
       }}
       
     >
-      {data.dataseminar.map((value) => {
+      {data.dataseminar.map((value,index:number) => {
         return (
-          <SwiperSlide className={`c-list__li`}>
+          <SwiperSlide key={index} className={`c-list__li`}>
             <Link href={`/seminar/${value.id}`}>
             <SeminarCategoryTag dateperiodstart={value.overview_period_start_time} dateperiodend={value.overview_period_end_time}></SeminarCategoryTag>
             <p className={'c-list__li-ph'}>

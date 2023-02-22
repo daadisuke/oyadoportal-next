@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 // next.jsの機能
 import Link from 'next/link';
 
-import useTime from '@/hooks/useTime';
+// import useTime from '@/hooks/useTime';
 
 import styles from './SeminarCategoryTag.module.scss';
 

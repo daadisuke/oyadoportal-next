@@ -49,7 +49,7 @@ export default function ColumnList({ datacolumn, datacolumntag, count }: Props) 
                   if(count){
                     if(index < count ){
                       return(
-                          <li className={`${styles['c-list__li']}`}>
+                          <li key={index} className={`${styles['c-list__li']}`}>
                               
                               <p className={`${styles['c-list__li-tag']} ${styles['it']}`}>
                                 <ColumnCategoryTag
@@ -80,7 +80,7 @@ export default function ColumnList({ datacolumn, datacolumntag, count }: Props) 
                     }
                 } else {
                 return(
-                      <li className={`${styles['c-list__li']}`}>
+                      <li key={index} className={`${styles['c-list__li']}`}>
                           
                           <p className={`${styles['c-list__li-tag']} ${styles['it']}`}>
                             <ColumnCategoryTag

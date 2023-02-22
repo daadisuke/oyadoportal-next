@@ -25,6 +25,13 @@
         opacity: 0.7;
         transition: all 0.3s;
       }
+      &:disabled {
+        background: #CCC;
+        &:hover {
+          opacity: 1;
+          transition: all 0.3s;
+        }
+      }
     }
   }
 

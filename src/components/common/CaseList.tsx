@@ -46,7 +46,7 @@ export default function CaseList({ datacace, count }: Props) {
                 //   console.log(value.company_name);
                 if(index < count ){
                   return(
-                      <li className={styles['p-case__list-li']}>
+                      <li key={index} className={styles['p-case__list-li']}>
                           <Link href={`/case/${value.id}`}>
                               <p className={styles['p-case__list-li-name']}>{value.company_name}</p>
                               <div className={styles['p-case__list-li-wrap']}>
@@ -63,7 +63,7 @@ export default function CaseList({ datacace, count }: Props) {
                   )
               } else {
                     return(
-                        <li className={styles['p-case__list-li']}>
+                        <li key={index} className={styles['p-case__list-li']}>
                             <Link href={`/case/${value.id}`}>
                                 <p className={styles['p-case__list-li-name']}>{value.company_name}</p>
                                 <div className={styles['p-case__list-li-wrap']}>
