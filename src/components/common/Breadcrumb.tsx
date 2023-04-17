@@ -32,8 +32,6 @@ import Link from 'next/link';
 // // components
 import IconFont from './IconFont';
 
-
-
 // style
 import styles from './Breadcrumb.module.scss';
 

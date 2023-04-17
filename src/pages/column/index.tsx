@@ -2,7 +2,7 @@
 import type { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import SiteHead from '@/components/layouts/includes/SiteHead'
+import SiteHead from '@/components/layouts/includes/SiteHead';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
 
@@ -17,77 +17,68 @@ import styles from './index.module.scss';
 
 //= ===========================各種インポートここまで
 
-<SiteHead
-    title='事例紹介'
-/>
+<SiteHead title="事例紹介" />;
 
 // レイアウトを定義
 Column.getLayout = (page: ReactElement) => (
-    <>
-        <Default>{page}</Default>
-    </>
+  <>
+    <Default>{page}</Default>
+  </>
 );
 
 export const getStaticProps = async () => {
-    const res = await fetch("https://012cloud.jp/oyado-portal/wp-json/wp/v2/column?_embed")
-    const datacolumn = await res.json()
+  const res = await fetch('https://012cloud.jp/oyado-portal/wp-json/wp/v2/column?_embed');
+  const datacolumn = await res.json();
 
-    const res02 = await fetch("https://012cloud.jp/oyado-portal/wp-json/wp/v2/column_category")
-    const datacolumntag = await res02.json()
+  const res02 = await fetch('https://012cloud.jp/oyado-portal/wp-json/wp/v2/column_category');
+  const datacolumntag = await res02.json();
 
-    return {
-        props:{
-            datacolumn:datacolumn,
-            datacolumntag:datacolumntag
-        }
-    }
-}
+  return {
+    props: {
+      datacolumn: datacolumn,
+      datacolumntag: datacolumntag,
+    },
+  };
+};
 
-export default function Column({datacolumn,datacolumntag}) {
-    // console.log(datacolumn[0]['column_category'][0]);
+export default function Column({ datacolumn, datacolumntag }) {
+  // console.log(datacolumn[0]['column_category'][0]);
 
-    return (
-        <>
-            <div className={styles['c-heading']}>
-                <h1 className={styles['c-heading__pageTitle']}>
-                    お役立ちコラム
-                </h1>
-            </div>
+  return (
+    <>
+      <div className={styles['c-heading']}>
+        <h1 className={styles['c-heading__pageTitle']}>お役立ちコラム</h1>
+      </div>
 
-            <section className={`${styles['column-list']} ${styles['l-section']}`}>
+      <section className={`${styles['column-list']} ${styles['l-section']}`}>
+        <div className={styles['l-section__inner']}>
+          <ul className={styles['p-column__tag-list']}>
+            <li>
+              <Link href={`/column/`}>全て</Link>
+            </li>
+            <ColumnCategoryTagLink datacolumn={datacolumn} />
+          </ul>
 
-                <div className={styles['l-section__inner']}>
+          <h2 className={styles['column-main__descTitle--secondary']}>全て</h2>
 
-                    <ul className={styles['p-column__tag-list']}>
-                        <li><Link href={`/column/`}>全て</Link></li>
-                        <ColumnCategoryTagLink
-                            datacolumn={datacolumn}
-                        />
-                    </ul>
-                    
-                    <h2 className={styles['column-main__descTitle--secondary']}>全て</h2>
+          <ColumnList
+            datacolumn={datacolumn}
+            datacolumntag={datacolumntag}
+          />
+        </div>
 
-                    <ColumnList
-                        datacolumn={datacolumn}
-                        datacolumntag={datacolumntag}
-                    />
-
-                </div>
-
-                <Breadcrumb
-                    data={[
-                        {
-                            name: 'TOP',
-                            path: `${getPath('dashboard')}`,
-                        },
-                        {
-                            name: 'お役立ちコラム',
-                        },
-                    ]}
-                />
-
-            </section>
-
-        </>
-    );
+        <Breadcrumb
+          data={[
+            {
+              name: 'TOP',
+              path: `${getPath('dashboard')}`,
+            },
+            {
+              name: 'お役立ちコラム',
+            },
+          ]}
+        />
+      </section>
+    </>
+  );
 }

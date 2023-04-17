@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",//importするときのベースパス
+    "baseUrl": ".", //importするときのベースパス
     "paths": {
       "@/*": ["src/*"] //importするときのエイリアス
     },

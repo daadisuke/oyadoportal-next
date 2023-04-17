@@ -14,9 +14,6 @@ import Link from 'next/link';
 
 import styles from './SeminarCategoryTag.module.scss';
 
-
-
-
 //= ===========================各種インポートここまで
 
 // type Props = {
@@ -24,9 +21,7 @@ import styles from './SeminarCategoryTag.module.scss';
 //   tag: object;
 // };
 
-
 const SeminarCategoryTag = (data) => {
-
   // const time = useTime(1000);
 
   // const [date, setDate] = useState(new Date());
@@ -47,26 +42,25 @@ const SeminarCategoryTag = (data) => {
 
   const end = new Date(yearEnd, monthEnd, dateEnd, hoursEnd, minutesEnd).toLocaleString('ja-JP');
 
-  if(start > time){
+  if (start > time) {
     return (
       <>
         <p className={`${styles['c-list__li-tag']} ${styles['plan']}`}>開催予定</p>
       </>
     );
-  } else if(start < time && time < end){
+  } else if (start < time && time < end) {
     return (
       <>
         <p className={`${styles['c-list__li-tag']} ${styles['receipt']}`}>募集中</p>
       </>
     );
-  } else if(end < time){
+  } else if (end < time) {
     return (
       <>
         <p className={`${styles['c-list__li-tag']} ${styles['end']}`}>終了</p>
       </>
     );
   }
-
 };
 
 export default SeminarCategoryTag;

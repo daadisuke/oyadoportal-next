@@ -43,7 +43,11 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
       <title>{title ? `${title}${!titleAllReplace ? ' | 株式会社お宿ポータル' : ''}` : `株式会社お宿ポータル`}</title>
       <meta
         name="description"
-        content={description ? `${description}` : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`}
+        content={
+          description
+            ? `${description}`
+            : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`
+        }
         key="description"
       />
 
@@ -55,7 +59,11 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
       />
       <meta
         property="og:description"
-        content={description ? `${description}` : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`}
+        content={
+          description
+            ? `${description}`
+            : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`
+        }
         key="og:description"
       />
       <meta
@@ -74,9 +82,9 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
         key="og:site_name"
       />
       <meta
-        property='og:image'
+        property="og:image"
         content={ogimage ? `${ogimage}` : `https://012cloud.jp/img/ogimage.png`}
-        key='og:image'
+        key="og:image"
       />
 
       {/* OGP twitter用設定 */}
@@ -92,7 +100,11 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
       />
       <meta
         name="twitter:description"
-        content={description ? `${description}` : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`}
+        content={
+          description
+            ? `${description}`
+            : `株式会社お宿ポータルは全国旅館会館2階に入居しており、ホテル・旅館のコンサルティングを行っている会社です。IT商材から補助金や設備の改修など幅広くお困りごとを解決いたします。`
+        }
         key="twitter:description"
       />
       <meta
@@ -101,14 +113,14 @@ const SiteHead = ({ title, titleAllReplace, description, keyword, ogimage, ogurl
         key="twitter:url"
       />
       <meta
-        name='twitter:image'
+        name="twitter:image"
         content={ogimage ? `${ogimage}` : `https://012cloud.jp/img/ogimage.png`}
-        key='twitter:image'
+        key="twitter:image"
       />
       <link
         rel="shortcut icon"
-        href="https://012cloud.jp/oyado-portal/assets/img/base/favicon.ico">
-      </link>
+        href="https://012cloud.jp/oyado-portal/assets/img/base/favicon.ico"
+      ></link>
     </Head>
   );
 };
