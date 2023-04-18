@@ -62,10 +62,6 @@ export const getStaticProps = async (context: any) => {
 };
 
 export default function ColumnId(data: any) {
-  console.log(data.datacolumn);
-  // console.log(data.datacolumntag);
-  // console.log(data.datacolumn['supervisor'][0]);
-  // console.log(data.datasupervisor);
   return (
     <>
       <section className={`${styles['detail']} ${styles['l-section']}`}>

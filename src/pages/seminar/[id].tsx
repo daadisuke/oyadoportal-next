@@ -50,7 +50,6 @@ export default function SeminarId(data: any) {
   // console.log(data.datacolumn['column_category'][0]);
   // console.log(data.datacolumntag);
   // console.log(data.datacolumn['supervisor'][0]);
-  console.log(data.dataseminar);
   return (
     <>
       <section className={`${styles['detail']} ${styles['l-section']}`}>

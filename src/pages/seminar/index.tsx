@@ -55,8 +55,7 @@ export default function Seminar(dataseminar: any) {
           {/* <div className={`${styles['swiper-wrapper']} ${styles['c-list']} ${styles['seminar']}`}>
 
                         {props.dataseminar.map((value)=>{
-                            console.log(value.overview_period_start_time);
-                            console.log(value.overview_period_end_time);
+                           
                             return(
                                 <div className={`${styles['swiper-slide']} ${styles['c-list__li']}`}>
                                 <Link href={`/seminar/${value.id}`}>
