@@ -34,7 +34,11 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Seminar(dataseminar: any) {
+type Props = {
+  dataseminar: any;
+};
+
+export default function Seminar({ dataseminar }: Props) {
   return (
     <>
       <div className={styles['c-heading']}>

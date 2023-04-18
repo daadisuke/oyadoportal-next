@@ -45,8 +45,6 @@ export default function SeminarList({ dataseminar, count }: Props) {
     <>
       <div className={`${styles['swiper-wrapper']} ${styles['c-list']} ${styles['seminar']}`}>
         {dataseminar.map((value, index) => {
-          console.log(value.period_start_time);
-
           if (count) {
             if (index < count) {
               return (

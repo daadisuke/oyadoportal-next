@@ -33,7 +33,11 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Case(datacace: any) {
+type Props = {
+  datacace: any;
+};
+
+export default function Case({ datacace }: Props) {
   return (
     <>
       <div className={styles['c-heading']}>

@@ -37,6 +37,7 @@ type DatacaseItem = {
 type DatacaseList = DatacaseItem[];
 
 export default function CaseList({ datacace, count }: Props) {
+  console.log(datacace);
   return (
     <>
       <ul className={styles['p-case__list']}>
