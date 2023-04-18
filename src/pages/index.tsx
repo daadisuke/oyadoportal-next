@@ -47,7 +47,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ datacace, datacolumn, datacolumntag, dataseminar }) {
+export default function Home(datacace: any, datacolumn: any, datacolumntag: any, dataseminar: any) {
   return (
     <>
       <main>

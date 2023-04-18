@@ -38,7 +38,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Column({ datacolumn, datacolumntag }) {
+export default function Column(datacolumn: any, datacolumntag: any) {
   // console.log(datacolumntag);
 
   return (

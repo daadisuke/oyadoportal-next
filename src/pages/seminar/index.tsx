@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Seminar({ dataseminar }) {
+export default function Seminar(dataseminar: any) {
   return (
     <>
       <div className={styles['c-heading']}>

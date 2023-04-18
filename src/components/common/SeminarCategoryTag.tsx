@@ -21,10 +21,7 @@ import styles from './SeminarCategoryTag.module.scss';
 //   tag: object;
 // };
 
-const SeminarCategoryTag = (data) => {
-  // const time = useTime(1000);
-
-  // const [date, setDate] = useState(new Date());
+const SeminarCategoryTag = (data: any) => {
   const time = new Date().toLocaleString();
 
   const yearStart = data.dateperiodstart.substring(0, 4);
@@ -61,6 +58,9 @@ const SeminarCategoryTag = (data) => {
       </>
     );
   }
+
+  // どの条件にも当てはまらない場合にはnullを返すようにする
+  return null;
 };
 
 export default SeminarCategoryTag;

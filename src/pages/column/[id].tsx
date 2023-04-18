@@ -28,7 +28,7 @@ export const getStaticPaths = async () => {
   const res = await fetch('https://012cloud.jp/oyado-portal/wp-json/wp/v2/column?_embed');
   const data = await res.json();
 
-  const paths = data.map((value) => ({
+  const paths = data.map((value: any) => ({
     params: { id: `${value.id}` },
   }));
 
@@ -38,7 +38,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: any) => {
   const id = context.params.id;
   const res02 = await fetch(`https://012cloud.jp/oyado-portal/wp-json/wp/v2/column/${id}`);
   const datacolumn = await res02.json();
@@ -61,7 +61,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export default function ColumnId(data) {
+export default function ColumnId(data: any) {
   console.log(data.datacolumn);
   // console.log(data.datacolumntag);
   // console.log(data.datacolumn['supervisor'][0]);

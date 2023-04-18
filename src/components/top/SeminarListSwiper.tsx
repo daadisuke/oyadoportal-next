@@ -37,7 +37,7 @@ export default function SeminarListSwiper(data: any) {
         },
       }}
     >
-      {data.dataseminar.map((value, index: number) => {
+      {data.dataseminar.map((value: any, index: number) => {
         return (
           <SwiperSlide
             key={index}

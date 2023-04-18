@@ -21,7 +21,7 @@ import styles from './ColumnSupervisor.module.scss';
 //   tag: object;
 // };
 
-const ColumnSupervisor = (data:any) => {
+const ColumnSupervisor = (data: any) => {
   return (
     <>
       <div className={`${styles['supervision']}`}>
