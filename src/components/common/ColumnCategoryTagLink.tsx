@@ -17,11 +17,11 @@ import Link from 'next/link';
 // };
 
 export default function ColumnCategoryTagLink(data: any) {
-  let categoryFlag01: boolean = false;
-  let categoryFlag02: boolean = false;
-  let categoryFlag03: boolean = false;
-  let categoryFlag04: boolean = false;
-  let categoryFlag05: boolean = false;
+  let categoryFlag01 = false;
+  let categoryFlag02 = false;
+  let categoryFlag03 = false;
+  let categoryFlag04 = false;
+  let categoryFlag05 = false;
 
   return (
     <>

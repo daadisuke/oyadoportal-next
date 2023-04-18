@@ -42,7 +42,7 @@ export default function CaseList({ datacace, count }: Props) {
       <ul className={styles['p-case__list']}>
         {datacace.map((value, index: number) => {
           //   console.log(value.company_name);
-          if (index < count) {
+          if (count != undefined && index < count) {
             return (
               <li
                 key={index}
